@@ -2,6 +2,13 @@
 
 Create AWS infrastructure and deploy React frontend & Node/Express backend using Terraform.
 
+Source Code Repo for this Project: https://github.com/mleager/instagram-mern
+
+***CREDIT:***
+Original `instagram-mern` Project is created by [Jigar Sable](https://github.com/jigar-sable/instagram-mern).
+
+- Project was modified to use Postmark instead of SendGrid.
+
 ## Project Resources:
 - `VPC`
   - and accompanying IGW, NAT, Routing Tables, etc.
