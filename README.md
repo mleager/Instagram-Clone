@@ -1,11 +1,12 @@
 # Instagram Clone - MERN Stack
 
+<img width="500" alt="MERN_Arch_2" src="https://github.com/mleager/Instagram-Clone/assets/106631893/b6086417-cbea-4468-8265-2e3cd22c7490">
+
 Create AWS infrastructure and deploy React frontend & Node/Express backend using Terraform.
 
 Source Code Repo for this Project: https://github.com/mleager/instagram-mern
 
-***CREDIT:***
-Original `instagram-mern` Project is created by [Jigar Sable](https://github.com/jigar-sable/instagram-mern).
+**ORIGINAL PROJECT BY: [Jigar Sable](https://github.com/jigar-sable/instagram-mern)**
 
 - Project was modified to use Postmark instead of SendGrid.
 
@@ -14,10 +15,10 @@ Original `instagram-mern` Project is created by [Jigar Sable](https://github.com
   - and accompanying IGW, NAT, Routing Tables, etc.
 
 - `2 Application Load Balancers`
-  - 1 Internet-facing for frontend, 1 Internal for backend
+  - 1 Internet-Facing ALB for Frontend, 1 Internal ALB for Backend
 
 - `2 Autoscaling Groups`
-  - 1 for each of the frontend & backend
+  - 1 for each of the Frontend & Backend
 
 - `MongoDB`
   - MongoDB resources for storing site data
@@ -47,5 +48,3 @@ Original `instagram-mern` Project is created by [Jigar Sable](https://github.com
   `sudo systemctl status nginx`
 - cd /usr/share/nginx/frontend
 - $ sudo npm start
-
-<img width="797" alt="MERN_Arch_2" src="https://github.com/mleager/Instagram-Clone/assets/106631893/b6086417-cbea-4468-8265-2e3cd22c7490">
