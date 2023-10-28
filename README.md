@@ -1,7 +1,5 @@
 # Instagram Clone - MERN Stack
 
-<img width="500" alt="MERN_Arch_2" src="https://github.com/mleager/Instagram-Clone/assets/106631893/b6086417-cbea-4468-8265-2e3cd22c7490">
-
 Create AWS infrastructure and deploy React frontend & Node/Express backend using Terraform.
 
 Source Code Repo for this Project: https://github.com/mleager/instagram-mern
