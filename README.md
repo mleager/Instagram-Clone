@@ -2,9 +2,6 @@
 
 Create AWS infrastructure and deploy React frontend & Node/Express backend using Terraform.
 
-<img width="797" alt="MERN_Arch_2" src="https://github.com/mleager/Instagram-Clone/assets/106631893/20d578d1-dce0-4553-9bbb-0df066cbd685">
-
-
 ## Project Resources:
 - `VPC`
   - and accompanying IGW, NAT, Routing Tables, etc.
@@ -43,3 +40,5 @@ Create AWS infrastructure and deploy React frontend & Node/Express backend using
   `sudo systemctl status nginx`
 - cd /usr/share/nginx/frontend
 - $ sudo npm start
+
+<img width="797" alt="MERN_Arch_2" src="https://github.com/mleager/Instagram-Clone/assets/106631893/b6086417-cbea-4468-8265-2e3cd22c7490">
