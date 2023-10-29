@@ -1,5 +1,7 @@
 project = "mern"
 
+use_amazonlinux = true
+
 instance_type = "t2.micro"
 
 mongodbatlas_public_key = "abcdefhi"
