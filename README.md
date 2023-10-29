@@ -44,7 +44,13 @@ Create AWS infrastructure and deploy React frontend & Node/Express backend using
 - cd /usr/share/nginx/backend
 - Add MongoDB Connection String to '/backend/config/config.env'
   
-  `MONGO_URI=mongodb+srv://<username>:<passowrd>@mongo-cluster.abcdefg.mongodb.net`
+  ```
+          * Must append "/?retryWrites=true&w=majority" to connect MongoDB with Node.js Backend *
+  
+  MONGO_URI=mongodb+srv://<username>:<password>@mongo-cluster.abcdefg.mongodb.net/?retryWrites=true&w=majority
+
+                    <mongo_connection_string>/?retryWrites=true&w=majority
+  ```
 - $ sudo npm start
 
 3. Start Frontend Server
