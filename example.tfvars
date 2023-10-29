@@ -24,6 +24,8 @@ dbuser_password = "password"
 
 database_name = "instagram"
 
+access_list_ip = "127.0.0.1"
+
 access_list_cidr = "0.0.0.0/0"
 
 postmark_api = "abcdefghijklm-1wehu-10uwdx-wsih"

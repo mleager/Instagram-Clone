@@ -1,14 +1,14 @@
 #!/bin/bash
 
-##################
-##   FRONTEND   ##
-##################
+#########################
+##  FRONTEND - UBUNTU  ##
+#########################
 
 # Update the Package Manager
-sudo yum update -y
+sudo apt update -y
 
 # Install Necessary Packages
-sudo yum install -y nginx npm
+sudo apt install -y nginx npm unzip wget
 
 # Create Directories
 sudo mkdir -p /usr/share/nginx/

@@ -1,14 +1,14 @@
 #!/bin/bash
 
-#################
-##   BACKEND   ##
-#################
+########################
+##  BACKEND - UBUNTU  ##
+########################
 
 # Update the Package Manager
-sudo yum update -y
+sudo apt update -y
 
 # Install Necessary Packages
-sudo yum install -y npm
+sudo apt install -y npm unzip wget
 
 # Install PM2 globally using NPM
 #sudo npm install -g pm2
@@ -61,4 +61,4 @@ sudo npm install
 #sudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ec2-user --hp /home/ec2-user
 
 # Clean Up (optional)
-sudo rm -f /etc/yum.repos.d/nodesource*
+sudo rm -f /etc/apt.repos.d/nodesource*

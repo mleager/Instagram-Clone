@@ -14,36 +14,16 @@ variable "instance_type" {
   description = "EC2 Instance type for ASG"
 }
 
-variable "frontend_script_amzn2023" {
-  type        = string
-  description = "Relative Path to the Frontend User Data Bash Script on Amazon Linux 2023 AMI"
-}
-
-variable "backend_script_amzn2023" {
-  type        = string
-  description = "Relative Path to the Backend User Data Bash Script on Amazon Linux 2023 AMI"
-}
-
-variable "frontend_script_ubuntu" {
-  type        = string
-  description = "Relative Path to the Frontend User Data Bash Script on Ubuntu AMI"
-}
-
-variable "backend_script_ubuntu" {
-  type        = string
-  description = "Relative Path to the Backend User Data Bash Script on Ubuntu"
-}
-
 variable "mongodbatlas_public_key" {
   type        = string
   description = "Public API Key for MongoDB Atlas"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "mongodbatlas_private_key" {
   type        = string
   description = "Private API Key for MongoDB Atlas"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "org_id" {
@@ -84,7 +64,7 @@ variable "dbuser" {
 variable "dbuser_password" {
   type        = string
   description = "MongoDB Atlas Database User Password"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "database_name" {
@@ -93,44 +73,44 @@ variable "database_name" {
 }
 
 variable "access_list_ip" {
-  type = string
+  type        = string
   description = "The IP Address that the cluster will be accessed from, can also be a CIDR Range or AWS security group"
 }
 
 variable "access_list_cidr" {
-  type = string
+  type        = string
   description = "The CIDR range that the cluster will be accessed from, can also be an IP Address or AWS security group"
 }
 
 variable "postmark_api" {
-  type = string
+  type        = string
   description = "API Key for Postmark"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "user_email" {
-  type = string
+  type        = string
   description = "Email address to send notifications from, such as Password Reset Template"
 }
 
 variable "bucket_name" {
-  type = string
+  type        = string
   description = "Name of the AWS S3 Bucket to use for the project"
 }
 
 variable "bucket_region" {
-  type = string
+  type        = string
   description = "Region to deploy AWS S3 Bucket"
 }
 
 variable "iam_user_key" {
-  type = string
+  type        = string
   description = "AWS IAM User Key"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "iam_user_secret_key" {
-  type = string
+  type        = string
   description = "AWS IAM User Secret Key"
-  sensitive = true
+  sensitive   = true
 }

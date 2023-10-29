@@ -60,7 +60,7 @@ module "frontend_sg" {
     }
   ]
   number_of_computed_ingress_with_source_security_group_id = 1
- 
+
   egress_with_cidr_blocks = [
     {
       from_port   = 0
@@ -119,7 +119,7 @@ module "frontend_asg" {
   target_group_arns = module.public_alb.target_group_arns
 
   create_launch_template = false
-  launch_template_id     = aws_launch_template.frontend_template.id
+  launch_template_id     = var.use_amazonlinux ? aws_launch_template.frontend_template.id : aws_launch_template.frontend_template_ubuntu.id
   instance_name          = "frontend"
   security_groups        = [module.frontend_sg.security_group_id]
 
@@ -160,7 +160,7 @@ module "backend_asg" {
   target_group_arns = module.private_alb.target_group_arns
 
   create_launch_template = false
-  launch_template_id     = aws_launch_template.backend_template.id
+  launch_template_id     = var.use_amazonlinux ? aws_launch_template.backend_template.id : aws_launch_template.backend_template_ubuntu.id
   instance_name          = "backend"
   security_groups        = [module.backend_sg.security_group_id]
 

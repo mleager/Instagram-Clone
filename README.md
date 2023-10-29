@@ -31,12 +31,29 @@ Source Code Repo for this Project: https://github.com/mleager/instagram-mern
 
 1. Apply Terraform config files
 
+  ***NOTE:*** <br>
+    * MongoDB Provider requires Public and Private Access Keys. <br>
+    * The `0-provider.tf` file shows 2 options for using the Keys:
+      
+      Set Keys as ENV Varibles using your Local Terminal
+        - MONGODB_ATLAS_PUBLIC_KEY=xxxxxxxx
+        - MONGODB_ATLAS_PRIVATE_KEY=xxxxxxxxxxxxxxxxxxxx
+          
+      Set Keys are Terraform variables in `terraform.tfvars`
+        - Make sure this file is not commited to Public Repos and stored properly
+
 2. Start the Backend Server
 - SSM into instance (allowed by IAM Instance Profile)
 - cd /usr/share/nginx/backend
 - Add MongoDB Connection String to '/backend/config/config.env'
   
-  `MONGO_URI=mongodb+srv://<username>:<passowrd>@mongo-cluster.abcdefg.mongodb.net`
+  ```
+          * Must append "/?retryWrites=true&w=majority" to connect MongoDB with Node.js Backend *
+  
+  MONGO_URI=mongodb+srv://<username>:<password>@mongo-cluster.abcdefg.mongodb.net/?retryWrites=true&w=majority
+
+                    <mongo_connection_string>/?retryWrites=true&w=majority
+  ```
 - $ sudo npm start
 
 3. Start Frontend Server
