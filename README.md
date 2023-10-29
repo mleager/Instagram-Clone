@@ -28,6 +28,17 @@ Create AWS infrastructure and deploy React frontend & Node/Express backend using
 
 1. Apply Terraform config files
 
+  ***NOTE:*** <br>
+    * MongoDB Provider requires Public and Private Access Keys. <br>
+    * The `0-provider.tf` file shows 2 options for using the Keys:
+      
+      Set Keys as ENV Varibles using your Local Terminal
+        - MONGODB_ATLAS_PUBLIC_KEY=xxxxxxxx
+        - MONGODB_ATLAS_PRIVATE_KEY=xxxxxxxxxxxxxxxxxxxx
+          
+      Set Keys are Terraform variables in `terraform.tfvars`
+        - Make sure this file is not commited to Public Repos and stored properly
+
 2. Start the Backend Server
 - SSM into instance (allowed by IAM Instance Profile)
 - cd /usr/share/nginx/backend
