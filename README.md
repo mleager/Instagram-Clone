@@ -9,27 +9,27 @@ Source Code Repo for this Project: https://github.com/mleager/instagram-mern
 - Project was modified to use Postmark instead of SendGrid.
 
 ## Project Resources:
-- `VPC`
+<b>VPC</b>
   - and accompanying IGW, NAT, Routing Tables, etc.
 
-- `2 Application Load Balancers`
+<b>2 Application Load Balancers</b>
   - 1 Internet-Facing ALB for Frontend, 1 Internal ALB for Backend
 
-- `2 Autoscaling Groups`
+<b>2 Autoscaling Groups</b>
   - 1 for each of the Frontend & Backend
 
-- `MongoDB`
+<b>MongoDB</b>
   - MongoDB resources for storing site data
 
-- `DNS`
+<b>DNS</b>
   - ACM and Route53 records for DNS
 
-- `Security Groups`
+<b>Security Groups</b>
   - Security Groups for AWS resources
 
 ## Instructions:
 
-1. Apply Terraform config files
+<b>Apply Terraform config files</b>
 
   ***NOTE:*** <br>
     * MongoDB Provider requires Public and Private Access Keys. <br>
@@ -42,24 +42,23 @@ Source Code Repo for this Project: https://github.com/mleager/instagram-mern
       Set Keys are Terraform variables in `terraform.tfvars`
         - Make sure this file is not commited to Public Repos and stored properly
 
-2. Start the Backend Server
-- SSM into instance (allowed by IAM Instance Profile)
-- cd /usr/share/nginx/backend
-- Add MongoDB Connection String to '/backend/config/config.env'
+<b>Start the Backend Server</b>
+1. SSM into instance (allowed by IAM Instance Profile)
+2. cd /usr/share/nginx/backend
+3. Add MongoDB Connection String to '/backend/config/config.env'
   
   ```
-          * Must append "/?retryWrites=true&w=majority" to connect MongoDB with Node.js Backend *
+    * Must append "/?retryWrites=true&w=majority" to connect MongoDB with Node.js Backend *
   
   MONGO_URI=mongodb+srv://<username>:<password>@mongo-cluster.abcdefg.mongodb.net/?retryWrites=true&w=majority
 
                     <mongo_connection_string>/?retryWrites=true&w=majority
   ```
-- $ sudo npm start
+4. `$ sudo npm start`
 
-3. Start Frontend Server
-- SSM into instance (allowed by IAM Instance Profile)
-- confirm Nginx is running
-  
+<b>Start Frontend Server</b>
+1. SSM into instance (allowed by IAM Instance Profile)
+2. confirm Nginx is running<br>
   `sudo systemctl status nginx`
-- cd /usr/share/nginx/frontend
-- $ sudo npm start
+3. cd /usr/share/nginx/frontend
+4. `$ sudo npm start`
