@@ -6,7 +6,7 @@ module "public_alb_sg" {
   description = "Security group to allow incoming HTTP and all outgoing traffic from Public ALB."
   vpc_id      = module.vpc.vpc_id
 
-  ingress_rules       = ["http-80-tcp"]
+  ingress_rules = ["https-443-tcp"]
   ingress_cidr_blocks = ["0.0.0.0/0"]
 
   egress_with_cidr_blocks = [
@@ -85,19 +85,11 @@ module "public_alb" {
     }
   ]
 
-  # https_listeners = [
-  #   {
-  #     port               = 443
-  #     protocol           = "HTTPS"
-  #     certificate_arn    = ""
-  #     target_group_index = 0
-  #   }
-  # ]
-
-  http_tcp_listeners = [
+  https_listeners = [
     {
-      port               = 80
-      protocol           = "HTTP"
+      port               = 443
+      protocol           = "HTTPS"
+      certificate_arn    = module.acm.acm_certificate_arn
       target_group_index = 0
     }
   ]
@@ -143,15 +135,6 @@ module "private_alb" {
       }
     }
   ]
-
-  # https_listeners = [
-  #   {
-  #     port               = 443
-  #     protocol           = "HTTPS"
-  #     certificate_arn    = ""
-  #     target_group_index = 0
-  #   }
-  # ]
 
   http_tcp_listeners = [
     {

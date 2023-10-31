@@ -55,6 +55,7 @@ output "user1" {
 # IP ACCESS LIST - All Access
 resource "mongodbatlas_project_ip_access_list" "full_access" {
   project_id = mongodbatlas_project.project.id
+  #ip_address = var.access_list_ip
   cidr_block = var.access_list_cidr
   comment    = "CIDR Block for accessing the cluster"
 }

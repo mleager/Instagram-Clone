@@ -14,6 +14,11 @@ variable "instance_type" {
   description = "EC2 Instance type for ASG"
 }
 
+variable "dns_server_name" {
+  type        = string
+  description = "Domain address of your DNS - necessary if using HTTPS. For HTTP, use Public ALB DNS name."
+}
+
 variable "mongodbatlas_public_key" {
   type        = string
   description = "Public API Key for MongoDB Atlas"

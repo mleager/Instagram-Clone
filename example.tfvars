@@ -4,6 +4,8 @@ use_amazonlinux = true
 
 instance_type = "t2.micro"
 
+dns_server_name = "www.your-server.com"
+
 mongodbatlas_public_key = "abcdefhi"
 
 mongodbatlas_private_key = "1234567-1d12-d12-d12-1231231"
