@@ -7,7 +7,6 @@ module "public_alb_sg" {
   vpc_id      = module.vpc.vpc_id
 
   ingress_rules = ["https-443-tcp"]
-  #ingress_rules       = ["http-80-tcp"]
   ingress_cidr_blocks = ["0.0.0.0/0"]
 
   egress_with_cidr_blocks = [
@@ -94,14 +93,6 @@ module "public_alb" {
       target_group_index = 0
     }
   ]
-
-  # http_tcp_listeners = [
-  #   {
-  #     port               = 80
-  #     protocol           = "HTTP"
-  #     target_group_index = 0
-  #   }
-  # ]
 
   tags = {
     Project = "${var.project}"
