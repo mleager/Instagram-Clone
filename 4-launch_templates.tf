@@ -35,7 +35,7 @@ sudo rm -f /tmp/frontend.zip
 cat << 'EOFF' | sudo tee /etc/nginx/conf.d/react-app.conf
 server {
     listen 80;
-    server_name ${module.public_alb.lb_dns_name}; # Replace with your domain or server name
+    server_name ${var.dns_server_name}; # Replace with your domain/server name/Public ALB DNS Name/Public EC2 Instance IP
     root /usr/share/nginx/frontend;
 
     location / {
@@ -198,7 +198,7 @@ sudo rm -f /tmp/frontend.zip
 sudo tee /etc/nginx/conf.d/react-app.conf << 'EOFF'
 server {
     listen 80;
-    server_name ${module.public_alb.lb_dns_name}; # Replace with your domain or server name
+    server_name ${var.dns_server_name}; # Replace with your domain/server name/Public ALB DNS Name/Public EC2 Instance IP
     root /usr/share/nginx/frontend;
 
     location / {
