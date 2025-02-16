@@ -43,3 +43,6 @@ bucket_region = "us-east-1"
 iam_user_key = "ABCDEFGHIJKLMN"
 
 iam_user_secret_key = "ABCDEFGHIJKLMNOPQRSTUV"
+
+test_pat = true
+
